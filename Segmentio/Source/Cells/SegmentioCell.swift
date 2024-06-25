@@ -297,6 +297,8 @@ class SegmentioCell: UICollectionViewCell {
             segmentTitleLabel?.text = content.title
             segmentTitleLabel?.minimumScaleFactor = 0.5
             segmentTitleLabel?.adjustsFontSizeToFitWidth = true
+            guard let text = segmentTitleLabel?.text else { return }
+            segmentTitleLabel?.attributedText = NSAttributedString(string: text, attributes: options.attributedKey)
         }
     }
     
