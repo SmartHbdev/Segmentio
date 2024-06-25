@@ -199,6 +199,7 @@ public struct SegmentioOptions {
     var labelTextNumberOfLines: Int
     var states: SegmentioStates
     var animationDuration: CFTimeInterval
+    var attributedKey: [NSAttributedString.Key : Any]
     var userInterractionEnabled: Bool
 
     public init() {
@@ -215,6 +216,7 @@ public struct SegmentioOptions {
                                         selectedState: SegmentioState(),
                                         highlightedState: SegmentioState())
         self.animationDuration = 0.1
+        self.attributedKey = [:]
         self.userInterractionEnabled = true
     }
 
@@ -231,6 +233,7 @@ public struct SegmentioOptions {
                                                                  selectedState: SegmentioState(),
                                                                  highlightedState: SegmentioState()),
                 animationDuration: CFTimeInterval = 0.1,
+                attributedKey: [NSAttributedString.Key : Any] = [:],
                 userInterractionEnabled: Bool = true) {
         self.backgroundColor = backgroundColor
         self.segmentPosition = segmentPosition
@@ -243,6 +246,7 @@ public struct SegmentioOptions {
         self.labelTextNumberOfLines = labelTextNumberOfLines
         self.states = segmentStates
         self.animationDuration = animationDuration
+        self.attributedKey = attributedKey
         self.userInterractionEnabled = userInterractionEnabled
     }
 }
